@@ -18,7 +18,8 @@
 				<div class="menu">
                     <!--
                     <a href="">Accueil</a>
-                    <a href="">Page produit</a>
+                    <a href="">Produits</a>
+                    <a href="">A propos</a>
                     -->
                 </div>
             </nav>
@@ -28,27 +29,28 @@
         </div>   
     </header>
     
+    <h1>Orinoco catégorie de produit</h1>
     <main>
-        <h1>Ours en peluche</h1>
-        <img />
-        <p>Nom du produit</p>
-        <p>00.00 €</p>
-        <p>description</p>
-        
-        <label for="nomProduit">Personnalisez</label>
-        <select id="nomProduit" required>
-            <!--Selon catégorie,
-            choix couleur ours
-            choix lentille appareils photo
-            choix vernis meubles
-            NB : nb d'options n'est pas identique pour chaque produit-->
-            <option value=""></option>
-            <option value=""></option>
-            <option value=""></option>
-            <option value=""></option>
-        </select>
-
-    <button>Ajouter au panier</button>
+        <section>
+            <h2 class="section-header">Ours en peluche</h2>
+                <div class="shop-item">
+                    <img class="shop-item-image" src="JWDP5/images/teddy_1.jpg" alt="teddy_1" width="300" />
+                    <div class="shop-item-details">
+                        <p class="shop-item-title">Norbert</p>
+                        <p class="shop-item-price">29.00 €</p>
+                        <p>5be9c8541c9d440000665243</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        <label for="customizeProduct">Personnalisez</label>
+                        <select id="customizeProduct">
+                            <option value="tan">brun clair</option>
+                            <option value="chocolate">chocolat</option>
+                            <option value="black">noir</option>
+                            <option value="white">blanc</option>
+                        </select>
+                    <button class="btn btn-primary shop-item-button" type="button">Ajouter au panier</button>
+                    </div>
+                </div>
+        </section>
     </main>
 
     <footer>

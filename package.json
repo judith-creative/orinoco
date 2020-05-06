@@ -1,0 +1,19 @@
+{
+  "name": "orinoco",
+  "version": "1.0.0",
+  "description": "Project 5 - Build an ecommerce website",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch ./main.scss:./style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/judith-creative/orinoco.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/judith-creative/orinoco/issues"
+  },
+  "homepage": "https://github.com/judith-creative/orinoco#readme"
+}

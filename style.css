@@ -1,11 +1,124 @@
 * {
   box-sizing: border-box;
   color: #333333;
+  margin: 0;
+  padding: 0;
 }
 
+/*NAVIGATION*/
+.navbar {
+  position: sticky;
+  top: 0;
+  height: 70px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  background: #f3e9f1;
+  z-index: 1;
+}
+.navbar .navbar-center {
+  width: 100%;
+  max-width: 1170px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1.5rem;
+}
+.navbar .navbar-center .nav-icon {
+  font-size: 1.5rem;
+}
+.navbar .navbar-center .basket-icon {
+  position: relative;
+  cursor: pointer;
+}
+.navbar .navbar-center .basket-icon .number-of-basket-items {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background: #6219ff;
+  padding: 0 5px;
+  border-radius: 50%;
+  color: #f3e9f1;
+}
+
+/*END OF NAVIGATION*/
+.shop-item-title {
+  text-transform: capitalize;
+  font-size: 1.1rem;
+  margin-top: 1rem;
+  letter-spacing: 0.1rem;
+  text-align: center;
+}
+
+.shop-item-price {
+  margin-top: 0.7rem;
+  letter-spacing: 0.1rem;
+  color: #b55c03;
+  text-align: center;
+}
+
+/*LIST OF PRODUCTS*/
+.products {
+  padding: 4rem 0;
+}
+.products .products-center {
+  width: 90vw;
+  margin: 0 auto;
+  max-width: 1170px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.section-title h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 5rem;
+  text-transform: capitalize;
+  letter-spacing: 0.1rem;
+}
+
+.product .img-container {
+  position: relative;
+  overflow: hidden;
+}
+.product .img-container .product-image {
+  display: block;
+  width: 100%;
+  min-height: 12rem;
+  transition: all 0.3 linear;
+}
+.product .img-container .bag-btn {
+  position: absolute;
+  top: 70%;
+  right: 0;
+  background: #6219ff;
+  border: none;
+  text-transform: uppercase;
+  padding: 0.5rem 0.75rem;
+  letter-spacing: 0.1rem;
+  font-weight: bold;
+  transition: all 0.3 linear;
+  transform: translateX(101%);
+  cursor: pointer;
+}
+.product .img-container .bag-btn .fa-eye {
+  margin-right: 0.5rem;
+}
+.product .img-container .bag-btn:hover {
+  color: #f3e9f1;
+}
+
+.img-container:hover .bag-btn {
+  transform: translateX(0);
+}
+.img-container:hover .product-image {
+  opacity: 0.5;
+}
+
+/*END OF LIST ITEMS*/
 body {
   text-align: center;
-  border: 2px solid black;
 }
 
 @media (min-width: 768px) {

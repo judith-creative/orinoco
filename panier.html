@@ -6,45 +6,58 @@
     <meta name="description" content="" />
     
     <link rel="icon" type="imgage/png" href="favicon.png">
+    <script src="https://kit.fontawesome.com/de4dee3a56.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="style.css" />
     <script src="panier.js" async></script>
 
     <title>Orinoco Panier</title>
 </head>
     <header>
-        <div>
-            <a href="index.html"><img src="logo-orinoco.png" alt="logo caddie orinoco" /></a>
-        </div>   
+        <!--Navbar-->
+    <nav class="navbar">
+        <div class="navbar-center">
+            <span class="nav-icon">
+                <i class="fas fa-bars"></i>
+            </span>
+            <a href="index.html"><img src="logo-orinoco.png" alt="orinoco logo caddie" /></a>
+            <div class="basket-icon">
+                <span class="nav-icon">
+                </span>
+            </div>
+        </div>
+    </nav>
+    <!--End of Navbar-->  
     </header>
     
+    <h1 class="section-header">Votre panier</h1>
     <div class="container">
         <section>
-            <h1 class="section-header">Votre panier</h1>
+            <h2></h2>
             <div class="basket-items">
                 <div class="basket-row">
                     <div class="basket-item basket-column">
-                        <img class="cart-item-image" src="JWDP5/images/teddy_1.jpg" alt="teddy_1" width="100">
+                        <img class="basket-item-image image-container" src="JWDP5/images/teddy_1.jpg" alt="teddy_1">
                     </div>
                     <div class="basket-column">
-                        <h2 class="basket-item-title">Norbert</h2>
-                        <p class="basket-price">29.00 €</p>
-                        <div class="basket-quantity">
-                            <input class="basket-quantity-input" type="number" value="1">
-                            <button class="btn btn-danger" type="button">supprimer</button>
-                        </div>
+                        <h3 class="shop-item-title">Norbert</h3>
+                        <h4 class="shop-item-price">29.00 €</h4>
+                        <button class="btn-danger" type="button">supprimer</button>
+                    </div>
+                    <div class="basket-quantity">
+                        <input class="basket-quantity-input" type="number" value="1">
                     </div>
                 </div>
                 <div class="basket-row">
                     <div class="basket-item basket-column">
-                        <img class="basket-item-image" src="JWDP5/images/teddy_2.jpg" alt="teddy_2" width="100" height="100">
+                        <img class="basket-item-image image-container" src="JWDP5/images/teddy_2.jpg" alt="teddy_2">
                     </div>
                     <div class="basket-column">
-                        <h2 class="basket-item-title">Arnold</h2>
-                        <p class="basket-price">39.00 €</p>
-                        <div class="basket-quantity">
-                            <input class="basket-quantity-input" type="number" value="1">
-                            <button class="btn btn-danger" type="button">supprimer</button>
-                        </div>
+                        <h3 class="shop-item-title">Arnold</h3>
+                        <h4 class="shop-item-price">39.00 €</h4>
+                        <button class="btn-danger" type="button">supprimer</button>
+                    </div>
+                    <div class="basket-quantity">
+                        <input class="basket-quantity-input" type="number" value="1"> 
                     </div>
                 </div>
             </div>
@@ -75,9 +88,9 @@
             <label for="caddress"></label>
             <input type="text" id="caddress" name="caddress" placeholder="Bat, escalier, étage (facultatif)" />
             
-            <input type="radio" name="conditions" value="cdv" id="cdv" required/>
-            <label for="cdv">J'ai lu et j'accepte les <a href="index.html">conditions générales de vente</a></label>
-
+            <input type="checkbox" name="conditions" value="cdv" id="cdv" required/>
+            <label for="cdv">J'ai lu et j'accepte les <a href="index.html">conditions générales de vente</a></label>    
+                      
             <button class="btn btn-primary btn-purchase" type="submit">Valider mon achat</button>
         </form>
     </div>

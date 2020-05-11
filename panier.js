@@ -21,7 +21,7 @@ function ready() {
 
 function removeBasketItem(event) {
     let buttonClicked = event.target;
-    buttonClicked.parentElement.parentElement.parentElement.remove();
+    buttonClicked.parentElement.parentElement.remove();
     updateBasketTotal();
 }
 
@@ -39,7 +39,7 @@ function updateBasketTotal() {
     let total = 0
     for (let i=0; i < basketRows.length; i++) {
         let basketRow = basketRows[i];
-        let priceElement = basketRow.getElementsByClassName('basket-price')[0];
+        let priceElement = basketRow.getElementsByClassName('shop-item-price')[0];
         let quantityElement = basketRow.getElementsByClassName('basket-quantity-input')[0];
         let price = parseFloat(priceElement.innerText.replace(' €', ''));
         let quantity = quantityElement.value;

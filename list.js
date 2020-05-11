@@ -30,6 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
         displayProducts(products) {
             let result = "";
             products.forEach(product => {
+                const price = (product.price / 100).toFixed(2);
                 result += `
                 <article class="product">
                     <div class="img-container">
@@ -40,7 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         </button>
                     </div>
                     <h3 class="shop-item-title">${product.name}</h3>
-                    <h4 class="shop-item-price">${product.price} €</h4>
+                    <h4 class="shop-item-price">${price} €</h4>
                 </article>
                 `;
             });

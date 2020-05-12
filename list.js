@@ -4,28 +4,20 @@
 class Products {
     async getProducts(){
         try {
-            let result = await fetch('http://localhost:3000/api/teddies');
-            let data = await result.json();
-            let products = data;
+            const result = await fetch('http://localhost:3000/api/teddies');
+            const products = await result.json();
             return products
         } catch {
             console.log(error);
         }
     }
+    showProductNumber(productList) {
+        const number = productList.length;
+        const numberOfProductsTitle = document.querySelector('h2');
+        numberOfProductsTitle.innerHTML = `<span>${number}<span> articles`;
+    }
 }
 
-//local storage
-class Storage {
-
-}
-
-document.addEventListener("DOMContentLoaded", () => {
-    //variables
-    const cartBtn = document.querySelector(".basket-icon");
-    const cartItems = document.querySelector(".number-of-basket-items");
-    const productsDOM = document.querySelector(".products-center");
-
-    //display products
     class UI {
         displayProducts(products) {
             let result = "";
@@ -48,6 +40,19 @@ document.addEventListener("DOMContentLoaded", () => {
             productsDOM.innerHTML = result;
         }
     }
+
+//local storage
+class Storage {
+
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    //variables
+    const cartBtn = document.querySelector(".basket-icon");
+    const cartItems = document.querySelector(".number-of-basket-items");
+    const productsDOM = document.querySelector(".products-center");
+    
+    //display products
 
     const ui = new UI();
     const products = new Products();

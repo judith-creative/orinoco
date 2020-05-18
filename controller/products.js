@@ -13,6 +13,8 @@ document.addEventListener("DOMContentLoaded", async () => {
         displayProducts(camerasList)
 
         showProductNumber(productList)
+
+        displaySingleProduct();
     } catch (err) {
         console.log(err)
     }

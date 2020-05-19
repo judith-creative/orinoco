@@ -9,7 +9,6 @@ function createSingleProduct (product) {
     const newArticle = document.createElement('article')
     newArticle.classList.add('product')
 
-
     newArticle.innerHTML = `
         <div class="img-container">
             <a href="./produit.html?productId=${product._id}">
@@ -31,8 +30,13 @@ function displayProducts(products) {
     products.forEach(createSingleProduct);
 }
 
-function displaySingleProduct() {
-    const productLink = document.querySelector('a[href^="./produit.html?productId"]');
+const productLink = document.querySelector('a[href^="./produit.html?productId"]');
+if(productLink.clicked == true){
+    window.open("./produit.html")
+    displaySingleProduct(productId);
+}
+
+function displaySingleProduct(productId) {    
     productLink.addEventListener('click', function(){
         const itemCategory = document.querySelector(".item-category")
     

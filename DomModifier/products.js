@@ -31,3 +31,10 @@ function displayProducts(products) {
     products.forEach(createSingleProduct);
 }
 
+function singleProductPage(products) {
+    for (let i = 0; i < localStorage.length; i++) {
+        const key = localStorage.key(i);
+        console.log(key);
+    }
+    //products.forEach(localStorage.key[i]);
+}

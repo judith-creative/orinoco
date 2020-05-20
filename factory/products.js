@@ -49,6 +49,8 @@ async function getTeddyById (id) {
     try {
         const result = await fetch(`${ApiServer}/teddies/${id}`);
         const product = await result.json();
+        localStorage.setItem("product", JSON.stringify(product))
+        console.log(localStorage.getItem("product"))
         return product
     } catch {
         console.log(error);

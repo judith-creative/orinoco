@@ -128,10 +128,6 @@ $price-color: #b55c03;
 /*END OF LIST ITEMS*/
 
 @media (min-width: 768px) {
-    main {
-    display: flex;
-    justify-content: space-around;
-    }
     .container {
         display: flex;
         margin: 4rem;

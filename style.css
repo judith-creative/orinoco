@@ -165,7 +165,11 @@ footer ul li {
   .shop-item {
     display: flex;
   }
+  .shop-item .shop-item-image {
+    flex: 1;
+  }
   .shop-item .shop-item-details {
+    flex: 1;
     text-align: left;
     margin-top: 3.5rem;
   }

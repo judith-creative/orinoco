@@ -10,6 +10,7 @@ function ready() {
         let button = addToBasketButton[i]
         button.addEventListener('click', addToBasketClicked)
     }
+    displaySingleProduct();
 }
 
 function addToBasketClicked(event) {
@@ -21,3 +22,4 @@ function addToBasketClicked(event) {
     let imageSrc = shopItem.getElementsByClassName('shop-item-image')[0].src;
     console.log(title, price, imageSrc)
 };
+

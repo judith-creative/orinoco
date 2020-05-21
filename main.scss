@@ -175,7 +175,11 @@ footer {
 @media (min-width: 768px) {
     .shop-item {
         display: flex;
+        .shop-item-image {
+            flex: 1;
+        }
         .shop-item-details {
+            flex: 1;
             text-align: left;
             margin-top: 3.5rem;
         }

@@ -1,3 +1,4 @@
+//controller
 if (document.readystate == 'loading') {
     document.addEventListener('DOMContentLoaded', ready)
 } else {
@@ -6,7 +7,6 @@ if (document.readystate == 'loading') {
 
 function ready() {
     let removeBasketItemButtons = document.getElementsByClassName('btn-danger');
-    console.log(removeBasketItemButtons);
     for (let i=0; i < removeBasketItemButtons.length; i++) {
         let button = removeBasketItemButtons[i];
         button.addEventListener('click', removeBasketItem);
@@ -19,6 +19,7 @@ function ready() {
     }
 }
 
+//factory ?
 function removeBasketItem(event) {
     let buttonClicked = event.target;
     buttonClicked.parentElement.parentElement.remove();
@@ -47,4 +48,15 @@ function updateBasketTotal() {
     }
     //total = Math.round(total * 100) / 100;
     document.getElementsByClassName('basket-total-price')[0].innerText = `${total} €`;
+}
+
+function addItemToBasket(title, price, image) {
+    let itemName = localStorage.getItem("name");
+    let itemPrice = localStorage.getItem("price");
+    let itemImage = localStorage.getItem("image");
+    //console.log(itemName, itemPrice, itemImage)
+    let basketRow = document.createElement('div');
+    basketRow.innerHTML = `<p>test</p>`;
+    let basketItems = document.querySelector('.basket-items')[0];
+    basketItems.append(basketRow);
 }

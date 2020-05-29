@@ -9,11 +9,6 @@ function createSingleProduct (product) {
     const newArticle = document.createElement('article')
     newArticle.classList.add('product')
 
-    //gets id successfully, however problem persists for communicating to next page
-    let params = new URLSearchParams(`?productId=${product._id}`);
-    let id = params.get('productId')
-    console.log(id)
-
     newArticle.innerHTML = `
         <div class="img-container">
             <a href="./produit.html?productId=${product._id}">

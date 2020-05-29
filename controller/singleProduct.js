@@ -1,8 +1,14 @@
 document.addEventListener("DOMContentLoaded", async () => {
     try {
-        const Teddy = getOneTeddy('5beaacd41c9d440000a57d97')
-        // id is not defined
-        displaySingleProduct(Teddy)
+        const urlParams = new URLSearchParams(window.location.search);
+        const id = urlParams.get('productId');
+
+        localStorage.setItem('itemActuel', id);
+        const itemActuel = localStorage.getItem('itemActuel');
+
+        getOneTeddy(itemActuel)
+
+        displaySingleProduct()
     } catch (err) {
         console.log(err)
     }

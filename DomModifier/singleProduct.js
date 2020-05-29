@@ -6,7 +6,7 @@ function displaySingleProduct() {
         <div class="shop-item">
             <img class="shop-item-image" src="./JWDP5/images/teddy_1.jpg" alt="teddy_1" />
             <div class="shop-item-details">
-                <h3 class="shop-item-title">arnold</h3>
+                <h3 class="shop-item-title">Arnold</h3>
                 <h4 class="shop-item-price">33.00</h4>
                 <p class="shop-item-id">Article id : id</p>
                 <p class="shop-item-description">beschrijving</p>

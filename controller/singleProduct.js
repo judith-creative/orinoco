@@ -8,7 +8,13 @@ document.addEventListener("DOMContentLoaded", async () => {
 
         getOneTeddy(itemActuel)
 
-        displaySingleProduct()
+        displaySingleProduct();
+
+        let addToBasketButton = document.getElementsByClassName('shop-item-button');
+        for(let i = 0; i < addToBasketButton.length; i++) {
+        let button = addToBasketButton[i]
+        button.addEventListener('click', addToBasketClicked)
+        }
     } catch (err) {
         console.log(err)
     }

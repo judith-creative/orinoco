@@ -23,3 +23,22 @@ function displaySingleProduct() {
         </div>
     `
 }
+
+function addToBasketClicked(event) {
+    let button = event.target
+    let shopItem = button.parentElement.parentElement
+    let title = shopItem.getElementsByClassName('shop-item-title')[0].innerText;
+    let price = shopItem.getElementsByClassName('shop-item-price')[0].innerText;
+    let imageSrc = shopItem.getElementsByClassName('shop-item-image')[0].src;
+
+    localStorage.setItem("name", title)
+    localStorage.setItem("price", price)
+    localStorage.setItem("image", imageSrc)
+    console.log(title, price, imageSrc)
+
+    openBasketPage()
+};
+
+function openBasketPage() {
+    let basketPage = window.open("panier.html");
+}

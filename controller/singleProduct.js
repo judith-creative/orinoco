@@ -6,15 +6,9 @@ document.addEventListener("DOMContentLoaded", async () => {
         localStorage.setItem('itemActuel', id);
         const itemActuel = localStorage.getItem('itemActuel');
 
-        getOneTeddy(itemActuel)
-
-        displaySingleProduct();
-
-        let addToBasketButton = document.getElementsByClassName('shop-item-button');
-        for(let i = 0; i < addToBasketButton.length; i++) {
-        let button = addToBasketButton[i]
-        button.addEventListener('click', addToBasketClicked)
-        }
+        const product = await getOneTeddy(itemActuel)
+            
+        displaySingleProduct(product);
     } catch (err) {
         console.log(err)
     }

@@ -1,6 +1,6 @@
 function displaySingleProduct(product) {    
-    const itemCategory = document.querySelector(".item-category")
-
+    const itemCategory = document.querySelector(".item-category");
+    
     itemCategory.innerHTML = `
         <h2 class="section-header">Ours en peluche</h2>
         <div class="shop-item">
@@ -12,16 +12,23 @@ function displaySingleProduct(product) {
                 <p class="shop-item-description">${product.description}</p>
                 <label for="customizeProduct"></label>
                 <select id="customizeProduct">
-                    <option value="tan">brun clair</option>
-                    <option value="chocolate">chocolat</option>
-                    <option value="black">noir</option>
-                    <option value="white">blanc</option>
+                    <!--Insert colors-->
                 </select>
             <button class="btn btn-primary shop-item-button" type="button">Ajouter au panier</button>
             <p><a href="index.html">Continuer mes achats</a></p>
             </div>
         </div>
     `
+
+    let colors = product.colors;
+    for (let i = 0; i < colors.length; i++) {
+        const color = colors[i];
+        const select = document.getElementById('customizeProduct');
+        const option = document.createElement('option');
+        option.setAttribute('value', color);
+        option.innerText = color;
+        select.appendChild(option);
+    }
 }
 
 function addToBasketClicked(event) {

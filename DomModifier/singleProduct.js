@@ -7,7 +7,7 @@ function displaySingleProduct(product) {
             <img class="shop-item-image" src="${product.imageUrl}" alt="teddy_1" />
             <div class="shop-item-details">
                 <h3 class="shop-item-title">${product.name}</h3>
-                <h4 class="shop-item-price">${product.price}</h4>
+                <h4 class="shop-item-price">${(product.price / 100).toFixed(2)} €</h4>
                 <p class="shop-item-id">Article id : ${product._id}</p>
                 <p class="shop-item-description">${product.description}</p>
                 <label for="customizeProduct"></label>

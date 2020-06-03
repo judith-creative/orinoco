@@ -9,6 +9,9 @@ document.addEventListener("DOMContentLoaded", async () => {
         const product = await getOneTeddy(itemActuel)
             
         displaySingleProduct(product);
+
+        let addToBasketButton = document.querySelector('.shop-item-button');
+        addToBasketButton.addEventListener('click', addToBasketClicked)
     } catch (err) {
         console.log(err)
     }

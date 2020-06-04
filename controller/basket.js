@@ -16,6 +16,8 @@ document.addEventListener("DOMContentLoaded", async () => {
             let input = quantityInputs[i];
             input.addEventListener('change', quantityChanged);
         }
+
+        document.getElementsByClassName('btn-purchase')[0].addEventListener('click', purchaseClicked)
     } catch (err) {
         console.log(err)
     }

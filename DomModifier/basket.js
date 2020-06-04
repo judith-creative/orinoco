@@ -57,3 +57,12 @@ function updateBasketTotal() {
     //total = Math.round(total * 100) / 100;
     document.getElementsByClassName('basket-total-price')[0].innerText = `${total} €`;
 }
+
+function purchaseClicked() {
+    const purchasePage = window.open("validation.html");
+    const basketItems = document.getElementsByClassName('basket-items')[0]
+    while(basketItems.hasChildNodes()) {
+        basketItems.removeChild(basketItems.firstChild)
+    }
+    updateBasketTotal()
+}

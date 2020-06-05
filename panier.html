@@ -68,10 +68,14 @@
                 <strong class="basket-total-title">Total</strong>
                 <span class="basket-total-price">68.00 €</span>
             </div>
+            <div>
+                <i class="fas fa-chevron-left"></i><a href="index.html">Continuez mes achats</a>
+            </div>
         </section>
 
         <form method="post" action="nomFichier.php">
-            <p>Un champs avec astérix est obligatoire</p>
+            <p>Je remplis le formulaire pour valider mon achat</p>
+            <p>Un champs avec astérix* est obligatoire</p>
             <label for="fname"></label>
             <input type="text" id="fname" name="fname" placeholder="*Prénom" required />
             <label for="lname"></label>
@@ -85,7 +89,7 @@
             <label for="telephone"></label>
 
             <input type="checkbox" name="conditions" value="cdv" id="cdv" required/>
-            <label for="cdv">J'ai lu et j'accepte les <a href="index.html">conditions générales de vente</a></label>    
+            <label for="cdv">J'ai lu et j'accepte les <a href="">conditions générales de vente</a></label>    
                       
             <button class="btn btn-primary btn-purchase" type="submit">Valider mon achat</button>
         </form>

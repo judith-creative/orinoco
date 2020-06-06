@@ -47,5 +47,5 @@ function addToBasketClicked(event) {
 };
 
 function openBasketPage() {
-    let basketPage = window.open("panier.html");
+    let basketPage = location.href = "panier.html";
 }

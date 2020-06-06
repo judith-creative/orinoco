@@ -59,7 +59,7 @@ function updateBasketTotal() {
 }
 
 function purchaseClicked() {
-    const purchasePage = window.open("validation.html");
+    const purchasePage = location.href = "validation.html";
     const basketItems = document.getElementsByClassName('basket-items')[0]
     while(basketItems.hasChildNodes()) {
         basketItems.removeChild(basketItems.firstChild)

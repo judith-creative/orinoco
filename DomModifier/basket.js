@@ -1,22 +1,24 @@
 
-function addItemToBasket(title, price, image) {
+function createBasketRow(title, price, image, color) {
     let basketRow = document.createElement('div');
     basketRow.classList.add('basket-row')
     let basketItems = document.getElementsByClassName('basket-items')[0];
-    console.log(basketItems)
-    let basketItemNames = basketItems.getElementsByClassName('basket-item-title')
+    /*
+    let basketItemNames = basketItems.getElementsByClassName('shop-item-title')
     for (let i = 0; i < basketItemNames.length; i++) {
         if(basketItemNames[i].innerText == title) {
             alert('this item is already added to the basket')
             return
         }
     }
+    */
     let basketRowContents = `
         <div class="basket-item basket-column">
             <img class="basket-item-image image-container" src="${image}" alt="teddy_1">
         </div>
         <div class="basket-column">
             <h3 class="shop-item-title">${title}</h3>
+            <p class="shop-item-feature">${color}</p>
             <h4 class="shop-item-price">${price}</h4>
             <button class="btn-danger" type="button">supprimer</button>
         </div>
@@ -26,6 +28,7 @@ function addItemToBasket(title, price, image) {
     `
     basketRow.innerHTML = basketRowContents
     basketItems.append(basketRow);
+    updateBasketTotal()
 }
 
 function removeBasketItem(event) {

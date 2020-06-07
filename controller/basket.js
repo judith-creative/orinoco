@@ -1,9 +1,8 @@
 document.addEventListener("DOMContentLoaded", async () => {
     try {
-        let itemName = localStorage.getItem("name");
-        let itemPrice = localStorage.getItem("price");
-        let itemImage = localStorage.getItem("image");
-        addItemToBasket(itemName, itemPrice, itemImage)
+        createBasketRow(title, price, image, color) //reste à définir les paramètres
+        
+        addItemToBasket('5beaaa8f1c9d440000a57d95', 1)
 
         let removeBasketItemButtons = document.getElementsByClassName('btn-danger');
         for (let i=0; i < removeBasketItemButtons.length; i++) {

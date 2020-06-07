@@ -1,19 +1,28 @@
-/*
-let addToBasketButton = document.getElementsByClassName('shop-item-button');
-        for(let i = 0; i < addToBasketButton.length; i++) {
-        let button = addToBasketButton[i]
-        button.addEventListener('click', addToBasketClicked)
-        }
-*/
+const ApiServer = 'http://localhost:3000/api'
+
+async function getOneTeddy (id) {
+    try {
+        const result = await fetch(`${ApiServer}/teddies/${id}`);
+        const product = await result.json();
+        return product
+    } catch {
+        console.log(error);
+    }
+}
+
 function getBasket() {
-  return window.localStorage.getItem('basket')
+  if(basket!=null) {
+    window.localStorage.getItem('basket')
+	} else {
+	    window.localStorage.setItem('basket')
+	  }
 }
 
 async function addItemToBasket(productId, quantity) {
   const basket = getBasket()
 
   const hasSameId = (product) => product._id === productId
-  const productIndex = basket.findIndex(hasSameId)
+  const productIndex = basket.findIndex(hasSameId(product))
 
   if (!productIndex) {
     const updatedBasket = [ ...basket, { 

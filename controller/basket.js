@@ -1,6 +1,11 @@
 document.addEventListener("DOMContentLoaded", async () => {
     try {
-        createBasketRow(title, price, image, color) //reste à définir les paramètres
+        const itemActuel = localStorage.getItem('itemActuel');
+        const product = await getOneTeddy(itemActuel)
+        const test = JSON.parse(localStorage.getItem('basket'));
+        const color = test.color;
+
+        createBasketRow(product, color)
         
         addItemToBasket('5beaaa8f1c9d440000a57d95', 1)
 

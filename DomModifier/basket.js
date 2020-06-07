@@ -1,5 +1,5 @@
 
-function createBasketRow(title, price, image, color) {
+function createBasketRow(product, color) {
     let basketRow = document.createElement('div');
     basketRow.classList.add('basket-row')
     let basketItems = document.getElementsByClassName('basket-items')[0];
@@ -14,12 +14,12 @@ function createBasketRow(title, price, image, color) {
     */
     let basketRowContents = `
         <div class="basket-item basket-column">
-            <img class="basket-item-image image-container" src="${image}" alt="teddy_1">
+            <img class="basket-item-image image-container" src="${product.imageUrl}" alt="teddy_1">
         </div>
         <div class="basket-column">
-            <h3 class="shop-item-title">${title}</h3>
+            <h3 class="shop-item-title">${product.name}</h3>
             <p class="shop-item-feature">${color}</p>
-            <h4 class="shop-item-price">${price}</h4>
+            <h4 class="shop-item-price">${(product.price / 100).toFixed(2)} €</h4>
             <button class="btn-danger" type="button">supprimer</button>
         </div>
         <div class="basket-quantity">

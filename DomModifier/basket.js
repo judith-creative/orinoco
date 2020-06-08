@@ -1,5 +1,5 @@
 
-function createBasketRow(product, color) {
+function createBasketRow(product) {
     let basketRow = document.createElement('div');
     basketRow.classList.add('basket-row')
     let basketItems = document.getElementsByClassName('basket-items')[0];
@@ -18,7 +18,6 @@ function createBasketRow(product, color) {
         </div>
         <div class="basket-column">
             <h3 class="shop-item-title">${product.name}</h3>
-            <p class="shop-item-feature">${color}</p>
             <h4 class="shop-item-price">${(product.price / 100).toFixed(2)} €</h4>
             <button class="btn-danger" type="button">supprimer</button>
         </div>

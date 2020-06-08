@@ -37,7 +37,6 @@ function addToBasketClicked(event) {
 
     let ProductObject = {
         productId: id,
-        color: color,
         quantity: 1
     };
     let wishProductObject = JSON.stringify(ProductObject);

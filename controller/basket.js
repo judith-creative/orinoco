@@ -2,12 +2,10 @@ document.addEventListener("DOMContentLoaded", async () => {
     try {
         const itemActuel = localStorage.getItem('itemActuel');
         const product = await getOneTeddy(itemActuel)
-        const test = JSON.parse(localStorage.getItem('basket'));
-        const color = test.color;
+        //const getProduct = JSON.parse(localStorage.getItem('basket'));
 
-        createBasketRow(product, color)
-        
-        addItemToBasket('5beaaa8f1c9d440000a57d95', 1)
+        createBasketRow(product)
+        addItemToBasket()
 
         let removeBasketItemButtons = document.getElementsByClassName('btn-danger');
         for (let i=0; i < removeBasketItemButtons.length; i++) {

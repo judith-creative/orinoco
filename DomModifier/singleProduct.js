@@ -31,17 +31,24 @@ function displaySingleProduct(product) {
     }
 }
 
-function addToBasketClicked(event) {
+function addToBasketClicked(event) {    
     let id = document.getElementById('productId').innerText;
-    let color = document.getElementById('customizeProduct').value;
-
     let ProductObject = {
         productId: id,
         quantity: 1
     };
-    let wishProductObject = JSON.stringify(ProductObject);
-    localStorage.setItem('basket', wishProductObject)
 
+    const basketLine = localStorage.getItem('basket');
+    if (basketLine) {
+        basket = JSON.parse(basketLine);
+        basket.push(ProductObject);
+        localStorage.setItem('basket', JSON.stringify(basket));
+    } else {
+        basket = [];
+        basket.push(ProductObject);
+        localStorage.setItem('basket', JSON.stringify(basket));
+    }
+    
     openBasketPage()
 };
 

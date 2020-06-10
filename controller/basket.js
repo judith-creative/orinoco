@@ -1,10 +1,5 @@
 document.addEventListener("DOMContentLoaded", async () => {
     try {
-        const itemActuel = localStorage.getItem('itemActuel');
-        const product = await getOneTeddy(itemActuel)
-        //const getProduct = JSON.parse(localStorage.getItem('basket'));
-
-        createBasketRow(product)
         addItemToBasket()
 
         let removeBasketItemButtons = document.getElementsByClassName('btn-danger');

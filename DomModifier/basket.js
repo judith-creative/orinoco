@@ -1,17 +1,27 @@
+let basket = []
+let itemsInBasket = localStorage.getItem('basket');
+basket = JSON.parse(itemsInBasket); // or basket = JSON.parse(localStorage.getItem('basket'))
 
-function createBasketRow(product) {
-    let basketRow = document.createElement('div');
+function addItemToBasket() {
+    for(let i = 0; i < basket.length; i++) {
+        let basketItemQuantity = document.getElementsByClassName('basket-quantity-input')[0].value;
+
+        let id = document.getElementById('ProductId');
+        if(id === null) {
+            createBasketRow()
+        } if(basket[i].productId === id) {
+                basketItemQuantity++
+            } else {
+                createBasketRow()
+         }
+    }
+}
+
+function createBasketRow(product) {    //product doit être rempli dans controller par le contenu du getProductById
+    const basketRow = document.createElement('div');
     basketRow.classList.add('basket-row')
     let basketItems = document.getElementsByClassName('basket-items')[0];
-    /*
-    let basketItemNames = basketItems.getElementsByClassName('shop-item-title')
-    for (let i = 0; i < basketItemNames.length; i++) {
-        if(basketItemNames[i].innerText == title) {
-            alert('this item is already added to the basket')
-            return
-        }
-    }
-    */
+        
     let basketRowContents = `
         <div class="basket-item basket-column">
             <img class="basket-item-image image-container" src="${product.imageUrl}" alt="teddy_1">
@@ -19,6 +29,7 @@ function createBasketRow(product) {
         <div class="basket-column">
             <h3 class="shop-item-title">${product.name}</h3>
             <h4 class="shop-item-price">${(product.price / 100).toFixed(2)} €</h4>
+            <p class="shop-item-id">Article id : <span id="productId">${product._id}<span></p>
             <button class="btn-danger" type="button">supprimer</button>
         </div>
         <div class="basket-quantity">
@@ -28,6 +39,7 @@ function createBasketRow(product) {
     basketRow.innerHTML = basketRowContents
     basketItems.append(basketRow);
     updateBasketTotal()
+    localStorage.removeItem('itemActuel')
 }
 
 function removeBasketItem(event) {

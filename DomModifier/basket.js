@@ -1,23 +1,7 @@
 let basket = []
-let itemsInBasket = localStorage.getItem('basket');
-basket = JSON.parse(itemsInBasket); // or basket = JSON.parse(localStorage.getItem('basket'))
+basket = JSON.parse(localStorage.getItem('basket'))
 
-function addItemToBasket() {
-    for(let i = 0; i < basket.length; i++) {
-        let basketItemQuantity = document.getElementsByClassName('basket-quantity-input')[0].value;
-
-        let id = document.getElementById('ProductId');
-        if(id === null) {
-            createBasketRow()
-        } if(basket[i].productId === id) {
-                basketItemQuantity++
-            } else {
-                createBasketRow()
-         }
-    }
-}
-
-function createBasketRow(product) {    //product doit être rempli dans controller par le contenu du getProductById
+function createBasketRow(product) {
     const basketRow = document.createElement('div');
     basketRow.classList.add('basket-row')
     let basketItems = document.getElementsByClassName('basket-items')[0];

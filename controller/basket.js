@@ -1,6 +1,10 @@
 document.addEventListener("DOMContentLoaded", async () => {
     try {
-        addItemToBasket()
+        for(let i = 0; i < basket.length; i++) {
+            let id = basket[i].productId
+            const product = await getOneTeddy(id)
+            createBasketRow(product)
+        }
 
         let removeBasketItemButtons = document.getElementsByClassName('btn-danger');
         for (let i=0; i < removeBasketItemButtons.length; i++) {

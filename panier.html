@@ -9,6 +9,7 @@
     <script src="https://kit.fontawesome.com/de4dee3a56.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="style.css" />
 
+    <script src ="./factory/singleProduct.js"></script>
     <script src ="./DomModifier/basket.js"></script>
     <script src="./controller/basket.js"></script>
 
@@ -37,36 +38,11 @@
         <section>
             <h2></h2>
             <div class="basket-items">
-                <div class="basket-row">
-                    <div class="basket-item basket-column">
-                        <img class="basket-item-image image-container" src="JWDP5/images/teddy_1.jpg" alt="teddy_1">
-                    </div>
-                    <div class="basket-column">
-                        <h3 class="shop-item-title">Norbert</h3>
-                        <h4 class="shop-item-price">29.00 €</h4>
-                        <button class="btn-danger" type="button">supprimer</button>
-                    </div>
-                    <div class="basket-quantity">
-                        <input class="basket-quantity-input" type="number" value="1">
-                    </div>
-                </div>
-                <div class="basket-row">
-                    <div class="basket-item basket-column">
-                        <img class="basket-item-image image-container" src="JWDP5/images/teddy_2.jpg" alt="teddy_2">
-                    </div>
-                    <div class="basket-column">
-                        <h3 class="shop-item-title">Arnold</h3>
-                        <h4 class="shop-item-price">39.00 €</h4>
-                        <button class="btn-danger" type="button">supprimer</button>
-                    </div>
-                    <div class="basket-quantity">
-                        <input class="basket-quantity-input" type="number" value="1"> 
-                    </div>
-                </div>
+                <!--basketRows inserted dynamically-->
             </div>
             <div class="basket-total">
                 <strong class="basket-total-title">Total</strong>
-                <span class="basket-total-price">68.00 €</span>
+                <span class="basket-total-price">0.00 €</span>
             </div>
             <div>
                 <i class="fas fa-chevron-left"></i><a href="index.html">Continuez mes achats</a>

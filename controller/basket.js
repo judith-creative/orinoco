@@ -2,8 +2,9 @@ document.addEventListener("DOMContentLoaded", async () => {
     try {
         for(let i = 0; i < basket.length; i++) {
             let id = basket[i].productId
+            let quantity = basket[i].quantity
             const product = await getOneTeddy(id)
-            createBasketRow(product)
+            createBasketRow(product, quantity)
         }
 
         let removeBasketItemButtons = document.getElementsByClassName('btn-danger');

@@ -32,20 +32,33 @@ function displaySingleProduct(product) {
 }
 
 function addToBasketClicked(event) {    
-    let id = document.getElementById('productId').innerText;
-    let ProductObject = {
-        productId: id,
-        quantity: 1
+    const urlParams = new URLSearchParams(window.location.search);
+    const id = urlParams.get('productId');
+    let productObject = {
+        productId: id
     };
 
     const basketLine = localStorage.getItem('basket');
     if (basketLine) {
         basket = JSON.parse(basketLine);
-        basket.push(ProductObject);
+        let found = false
+        for(let i = 0; !found && i < basket.length; i++) {
+            if(id === basket[i].productId) {
+                found = true
+                basket[i].quantity++
+            }
+        }
+        
+        if(!found) {
+                productObject.quantity = 1
+                basket.push(productObject);
+        }
+        console.log(basket)
         localStorage.setItem('basket', JSON.stringify(basket));
     } else {
         basket = [];
-        basket.push(ProductObject);
+        productObject.quantity = 1
+        basket.push(productObject);
         localStorage.setItem('basket', JSON.stringify(basket));
     }
     

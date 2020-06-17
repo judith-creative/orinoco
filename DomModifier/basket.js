@@ -1,7 +1,7 @@
 let basket = []
 basket = JSON.parse(localStorage.getItem('basket'))
 
-function createBasketRow(product) {
+function createBasketRow(product, quantity) {
     const basketRow = document.createElement('div');
     basketRow.classList.add('basket-row')
     let basketItems = document.getElementsByClassName('basket-items')[0];
@@ -17,7 +17,7 @@ function createBasketRow(product) {
             <button class="btn-danger" type="button">supprimer</button>
         </div>
         <div class="basket-quantity">
-            <input class="basket-quantity-input" type="number" value="1">
+            <input class="basket-quantity-input" type="number" value="${quantity}">
         </div>
     `
     basketRow.innerHTML = basketRowContents

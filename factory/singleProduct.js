@@ -32,7 +32,6 @@ function addToBasketClicked(event) {
                 productObject.quantity = 1
                 basket.push(productObject);
         }
-        console.log(basket)
         localStorage.setItem('basket', JSON.stringify(basket));
     } else {
         basket = [];

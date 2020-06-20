@@ -13,7 +13,7 @@ function createBasketRow(product, quantity) {
         <div class="basket-column">
             <h3 class="shop-item-title">${product.name}</h3>
             <h4 class="shop-item-price">${(product.price / 100).toFixed(2)} €</h4>
-            <p class="shop-item-id">Article id : <span id="productId">${product._id}<span></p>
+            <p class="shop-item-id">${product._id}</p>
             <button class="btn-danger" type="button">supprimer</button>
         </div>
         <div class="basket-quantity">
@@ -28,8 +28,20 @@ function createBasketRow(product, quantity) {
 
 function removeBasketItem(event) {
     let buttonClicked = event.target;
+    let id = buttonClicked.previousElementSibling.innerText;
     buttonClicked.parentElement.parentElement.remove();
+    const itemToRemove = { productId: id }
+    basketArrayItemRemove(itemToRemove)
     updateBasketTotal();
+}
+
+function basketArrayItemRemove(itemToRemove) {
+    const basketFilter = basket.filter(item => item.productId !== itemToRemove.productId)
+    if(basketFilter.length !== 0) {
+        localStorage.setItem('basket', JSON.stringify(basketFilter))        
+    } else {
+        localStorage.clear()
+    }
 }
 
 function quantityChanged(event) {

@@ -49,7 +49,21 @@ function quantityChanged(event) {
     if(isNaN(input.value) || input.value <= 0) {
         input.value = 1
     }
+    let id = input.parentElement.previousElementSibling.children[2].innerText
+    updateQuantityLocalStorageBasket(id)
     updateBasketTotal();
+}
+
+function updateQuantityLocalStorageBasket(id) {
+    let input = event.target
+    let found = false
+    for(let i = 0; !found && i < basket.length; i++) {
+        if(id === basket[i].productId){
+            found = true
+            basket[i].quantity = parseInt(input.value) //la méthode pour la transformation en type number n'est peut-être pas nécessaire car sera stringifié par la suite
+        }
+    }
+    localStorage.setItem('basket', JSON.stringify(basket));
 }
 
 function updateBasketTotal() {

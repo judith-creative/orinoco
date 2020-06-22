@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", async () => {
-    try {
+    try {      
         const urlParams = new URLSearchParams(window.location.search);
         const id = urlParams.get('productId');
 
@@ -12,6 +12,9 @@ document.addEventListener("DOMContentLoaded", async () => {
 
         let addToBasketButton = document.querySelector('.shop-item-button');
         addToBasketButton.addEventListener('click', addToBasketClicked)
+        
+        basket = JSON.parse(localStorage.getItem('basket'))
+        setBasketValues(basket)
     } catch (err) {
         console.log(err)
     }

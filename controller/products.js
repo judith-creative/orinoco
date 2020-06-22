@@ -13,6 +13,9 @@ document.addEventListener("DOMContentLoaded", async () => {
         displayProducts(camerasList)
 
         showProductNumber(productList)
+
+        basket = JSON.parse(localStorage.getItem('basket'))
+        setBasketValues(basket)
     } catch (err) {
         console.log(err)
     }

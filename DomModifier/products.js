@@ -4,6 +4,18 @@ function showProductNumber(productList) {
     numberOfProductsTitle.innerHTML = `<span>${number}<span> articles`;
 }
 
+function setBasketValues(basket){
+    const numberOfBasketItems = document.createElement('div')
+    numberOfBasketItems.classList.add('number-of-basket-items')
+    const basketIcon = document.getElementsByClassName('basket-icon')[0]
+    let itemsTotal = 0;
+    basket.map(item => {
+        itemsTotal += item.quantity;
+    })
+    numberOfBasketItems.innerText = itemsTotal
+    basketIcon.append(numberOfBasketItems)
+}
+
 function createSingleProduct (product) {
     const parentNode = document.querySelector(".products-center")
     const newArticle = document.createElement('article')

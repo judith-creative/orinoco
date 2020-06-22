@@ -30,13 +30,14 @@ function removeBasketItem(event) {
     let buttonClicked = event.target;
     let id = buttonClicked.previousElementSibling.innerText;
     buttonClicked.parentElement.parentElement.remove();
-    const itemToRemove = { productId: id }
+    let itemToRemove = { productId: id }
     basketArrayItemRemove(itemToRemove)
     updateBasketTotal();
 }
 
 function basketArrayItemRemove(itemToRemove) {
-    const basketFilter = basket.filter(item => item.productId !== itemToRemove.productId)
+    basket = JSON.parse(localStorage.getItem('basket'))
+    let basketFilter = basket.filter(item => item.productId !== itemToRemove.productId)
     if(basketFilter.length !== 0) {
         localStorage.setItem('basket', JSON.stringify(basketFilter))        
     } else {

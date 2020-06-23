@@ -28,3 +28,34 @@ async function postBasketOrder(contact, products) {
         console.log(error);
     }
 }
+
+function createBasketOrder(event) {
+    event.preventDefault()
+    let input = event.target
+    let contact = {
+        firstName: input.firstName.value,
+        lastName: input.lastName.value,
+        address: input.address.value,
+        city: input.city.value,
+        email: input.email.value
+    }
+
+    let products = []
+    let basket = JSON.parse(localStorage.getItem('basket'))
+    function productId() {
+        basket.forEach(item => {
+            products.push(item.productId)
+        })
+    }
+    productId() //store in controller ?
+
+    postBasketOrder(contact, products)
+
+    const basketItems = document.getElementsByClassName('basket-items')[0]
+    while(basketItems.hasChildNodes()) {
+        basketItems.removeChild(basketItems.firstChild)
+    }
+    updateBasketTotal()
+    localStorage.clear()
+    //location.href = "validation.html"
+}

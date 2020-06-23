@@ -82,14 +82,3 @@ function updateBasketTotal() {
     //total = Math.round(total * 100) / 100;
     document.getElementsByClassName('basket-total-price')[0].innerText = `${total} €`;
 }
-/* WAIT TO CLEAN UP CODE IN CONTROLLER
-function purchaseClicked() {
-    //const purchasePage = location.href = "validation.html";
-    const basketItems = document.getElementsByClassName('basket-items')[0]
-    while(basketItems.hasChildNodes()) {
-        basketItems.removeChild(basketItems.firstChild)
-    }
-    updateBasketTotal()
-    localStorage.clear()
-}
-*/

@@ -19,7 +19,38 @@ document.addEventListener("DOMContentLoaded", async () => {
             input.addEventListener('change', quantityChanged);
         }
 
-        document.getElementsByClassName('btn-purchase')[0].addEventListener('click', purchaseClicked)
+        //FIND OUT HOW TO CLEAN UP CODE BELOW
+        const form = document.querySelector('form')
+        form.addEventListener('submit', (event) => {
+            event.preventDefault()
+            let input = event.target
+            let contact = {
+                firstName: input.firstName.value,
+                lastName: input.lastName.value,
+                address: input.address.value,
+                city: input.city.value,
+                email: input.email.value
+            }
+
+            let products = []
+            let basket = JSON.parse(localStorage.getItem('basket'))
+            function productId() {
+                basket.forEach(item => {
+                    products.push(item.productId)
+                })
+            }
+            productId()
+
+            postBasketOrder(contact, products)
+
+            const basketItems = document.getElementsByClassName('basket-items')[0]
+            while(basketItems.hasChildNodes()) {
+                basketItems.removeChild(basketItems.firstChild)
+            }
+            updateBasketTotal()
+            localStorage.clear()
+        });
+
     } catch (err) {
         console.log(err)
     }

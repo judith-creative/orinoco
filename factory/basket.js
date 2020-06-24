@@ -23,7 +23,7 @@ async function postBasketOrder(contact, products) {
             })
         })
         const order = await result.json();
-        return console.log(order)
+        return localStorage.setItem('order', order.orderId)
     } catch {
         console.log(error);
     }

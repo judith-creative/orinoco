@@ -1,6 +1,8 @@
+//basket declared at the top to prevent repetition because used by number of functions below
 let basket = []
 basket = JSON.parse(localStorage.getItem('basket'))
 
+//displays basket rows && calls updateBasketTotal
 function createBasketRow(product, quantity) {
     const basketRow = document.createElement('div');
     basketRow.classList.add('basket-row')
@@ -23,9 +25,13 @@ function createBasketRow(product, quantity) {
     basketRow.innerHTML = basketRowContents
     basketItems.append(basketRow);
     updateBasketTotal()
-    localStorage.removeItem('itemActuel')
 }
 
+/*
+removes item from basket list display
+&& provides value for basketArrayItemRemove before calling it
+&& calls updateBasketTotal
+*/
 function removeBasketItem(event) {
     let buttonClicked = event.target;
     let id = buttonClicked.previousElementSibling.innerText;
@@ -35,6 +41,7 @@ function removeBasketItem(event) {
     updateBasketTotal();
 }
 
+//removes item from localStorage basket
 function basketArrayItemRemove(itemToRemove) {
     basket = JSON.parse(localStorage.getItem('basket'))
     let basketFilter = basket.filter(item => item.productId !== itemToRemove.productId)
@@ -45,6 +52,11 @@ function basketArrayItemRemove(itemToRemove) {
     }
 }
 
+/*
+avoids quantity input of zero or lower
+&& provides value for updateQuantityLocalStorageBasket before calling it
+&& calls updateBasketTotal
+*/
 function quantityChanged(event) {
     let input = event.target;
     if(isNaN(input.value) || input.value <= 0) {
@@ -55,6 +67,7 @@ function quantityChanged(event) {
     updateBasketTotal();
 }
 
+//changes localStorage quantity of a specific id upon input change
 function updateQuantityLocalStorageBasket(id) {
     let input = event.target
     let found = false
@@ -67,6 +80,7 @@ function updateQuantityLocalStorageBasket(id) {
     localStorage.setItem('basket', JSON.stringify(basket));
 }
 
+//uses information from basket display to update the total price of basket items
 function updateBasketTotal() {
     let basketItemContainer = document.getElementsByClassName('basket-items')[0];
     let basketRows = basketItemContainer.getElementsByClassName('basket-row');
@@ -79,6 +93,6 @@ function updateBasketTotal() {
         let quantity = quantityElement.value;
         total = total + (price * quantity);
     }
-    //total = Math.round(total * 100) / 100;
+    //total = Math.round(total * 100) / 100; in case prices are not rounded
     document.getElementsByClassName('basket-total-price')[0].innerText = `${total} €`;
 }

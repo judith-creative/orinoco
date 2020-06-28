@@ -1,3 +1,4 @@
+//displays confirmation message with orderId obtained through localStorage
 function createConfirmMessage(orderId) {
     const confirmMessageContent = document.querySelector('section');
             

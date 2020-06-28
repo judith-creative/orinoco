@@ -1,3 +1,4 @@
+//controls if DOM content is loaded before acting upon the DOM
 document.addEventListener("DOMContentLoaded", async () => {
     try {
         const [ teddiesList, furnitureList, camerasList ] = await Promise.all([
@@ -6,6 +7,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             getAllCameras()
         ])
 
+        //uses list results for each product to turn list arguments in functions below into a value
         const productList = [ ...teddiesList, ...furnitureList, ...camerasList ]
 
         displayProducts(teddiesList)
@@ -14,6 +16,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
         showProductNumber(productList)
 
+        //gets the basket value in localStorage to turn basket argument in function below into a value
         basket = JSON.parse(localStorage.getItem('basket'))
         setBasketValues(basket)
     } catch (err) {

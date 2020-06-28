@@ -1,9 +1,11 @@
+//displays the total number of products regardless of type
 function showProductNumber(productList) {
     const number = productList.length;
     const numberOfProductsTitle = document.querySelector('h2');
     numberOfProductsTitle.innerHTML = `<span>${number}<span> articles`;
 }
 
+//displays number of products in basket on basket icon
 function setBasketValues(basket){
     const numberOfBasketItems = document.createElement('div')
     numberOfBasketItems.classList.add('number-of-basket-items')
@@ -16,6 +18,7 @@ function setBasketValues(basket){
     basketIcon.append(numberOfBasketItems)
 }
 
+//displays each product and lists them up one after another
 function createSingleProduct (product) {
     const parentNode = document.querySelector(".products-center")
     const newArticle = document.createElement('article')
@@ -38,6 +41,7 @@ function createSingleProduct (product) {
     parentNode.appendChild(newArticle)
 }
 
+//allows to execute single product display by looping through the products list returned by get product promise
 function displayProducts(products) {
     products.forEach(createSingleProduct);
 }

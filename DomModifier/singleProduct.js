@@ -1,3 +1,4 @@
+//displays number of products in basket on basket icon (as on index page)
 function setBasketValues(basket){
     const numberOfBasketItems = document.createElement('div')
     numberOfBasketItems.classList.add('number-of-basket-items')
@@ -10,13 +11,14 @@ function setBasketValues(basket){
     basketIcon.append(numberOfBasketItems)
 }
 
+//displays product details of the product clicked upon previously on index page
 function displaySingleProduct(product) {    
     const itemCategory = document.querySelector(".item-category");
     
     itemCategory.innerHTML = `
         <h2 class="section-header">Ours en peluche</h2>
         <div class="shop-item">
-            <img class="shop-item-image" src="${product.imageUrl}" alt="teddy_1" />
+            <img class="shop-item-image" src="${product.imageUrl}" alt="${product.name} teddy" />
             <div class="shop-item-details">
                 <h3 class="shop-item-title">${product.name}</h3>
                 <h4 class="shop-item-price">${(product.price / 100).toFixed(2)} €</h4>
@@ -31,7 +33,7 @@ function displaySingleProduct(product) {
             </div>
         </div>
     `
-
+    //allows user to pick color in drop-down menu
     let colors = product.colors;
     for (let i = 0; i < colors.length; i++) {
         const color = colors[i];

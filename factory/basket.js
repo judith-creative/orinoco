@@ -23,7 +23,12 @@ async function postBasketOrder(contact, products) {
             })
         })
         const order = await result.json();
-        return localStorage.setItem('order', order.orderId)
+        await localStorage.setItem('order', order.orderId)
+        const confirm = await localStorage.getItem('order')
+        
+        if(confirm) {
+            location.href = "validation.html"
+        }
     } catch {
         console.log(error);
     }
@@ -42,12 +47,9 @@ function createBasketOrder(event) {
 
     let products = []
     let basket = JSON.parse(localStorage.getItem('basket'))
-    function productId() {
-        basket.forEach(item => {
+    basket.forEach(item => {
             products.push(item.productId)
-        })
-    }
-    productId() //store in controller ?
+    })
 
     postBasketOrder(contact, products)
 
@@ -56,6 +58,5 @@ function createBasketOrder(event) {
         basketItems.removeChild(basketItems.firstChild)
     }
     updateBasketTotal()
-    localStorage.clear()
-    //location.href = "validation.html"
+    localStorage.removeItem('basket')
 }

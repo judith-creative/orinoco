@@ -31,7 +31,7 @@ async function postBasketOrder(contact, products) {
         //makes sure orderId is returned before opening confirm page
         const confirm = await localStorage.getItem('order')
         if(confirm) {
-            location.href = "validation.html"
+            location.href = "confirm.html"
         }
     } catch {
         console.log(error);

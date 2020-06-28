@@ -47,5 +47,5 @@ function addToBasketClicked(event) {
     }
     
     //opens basket page when product is added
-    location.href = "panier.html"
+    location.href = "basket.html"
 };

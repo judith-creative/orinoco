@@ -26,7 +26,7 @@ function createSingleProduct (product) {
 
     newArticle.innerHTML = `
         <div class="img-container">
-            <a href="./produit.html?productId=${product._id}">
+            <a href="./product.html?productId=${product._id}">
                 <img class="product-image" src=${product.imageUrl} alt="teddy_1" />
                 <button class="bag-btn" data-id=${product._id}>
                     <i class="far fa-eye"></i>

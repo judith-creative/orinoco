@@ -3,16 +3,17 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-    <meta name="description" content="Orinoco est un e-commerce pour tout type d'articles comme appareils photo anciens, peluches et meubles en bois" />
+    <meta name="description" content="" />
     
     <link rel="icon" type="imgage/png" href="favicon.png">
     <script src="https://kit.fontawesome.com/de4dee3a56.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="style.css" />
-    <script src="./factory/products.js"></script>
-    <script src="./DomModifier/products.js"></script>
-    <script src="./controller/products.js"></script>
 
-    <title>Orinoco vente meubles en chêne, appareils photo vintage et ours</title>
+    <script src="./factory/singleProduct.js"></script>
+    <script src="./DomModifier/singleProduct.js"></script>
+    <script src="./controller/singleProduct.js"></script>
+
+    <title>Orinoco vente produit</title>
 </head>
 
 <body>
@@ -34,19 +35,12 @@
         </div>
     </nav>
     <!--End of Navbar-->
-    <h1>La collection Orinoco</h1>
-    <!--Products-->
-    <section class="products">
-        <div class="section-title">
-            <h2></h2>
-        </div>
-        <div class="products-center">
-            <!--Single product-->
-        </div>
-    </section>
-    <!--Basket-->
-    <!--End of Basket-->
-               
+    
+    <h1>Orinoco catégorie de produit</h1>
+        <section class="item-category">
+            <!--function displaySingleProduct-->
+        </section>
+
     <footer>
         <ul>
             <li>Plan du site</li>
@@ -54,6 +48,6 @@
             <li>Conditions générales de vente</li>
         </ul>
     </footer>
-    
+
 </body>
 </html>
